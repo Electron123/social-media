@@ -6,10 +6,10 @@
 <body>
 	<form method="post" enctype="multipart/form-data"> 
 		{% csrf_token %}
-		{{Post}}
+		{{Post.as_p}}
 		<input type="submit" value="Post">
 	</form>
 
-	{{Post.errors}}
+	
 </body>
 </html>

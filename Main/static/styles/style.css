@@ -7,6 +7,9 @@ header {
 	height: 200px;
 	background: linear-gradient(-90deg, #0CCDA3, #C1FCD3);
 	margin-top: -22px;
+	overflow: hidden;
+	position: fixed;
+	width: 100%;
 }
 header h1{
 	padding: 50px 0 0 20px;
@@ -28,7 +31,14 @@ header h1{
 	color: white;
 	border-radius: 10px;
 	transition: padding .5s;
+	display: inline;
+	cursor: pointer;
 }
+
+.navbar form {
+	margin: 25px 20px 30px 30px;
+}
+
 
 .navbar a:hover{
 	padding: 5px 20px;
@@ -47,6 +57,7 @@ header h1{
 	background: linear-gradient(-90deg, #0CCDA3, #C1FCD3);
 	outline: none;
 	cursor: pointer;
+	margin-top: 50px;
 }
 
 .login-box{
@@ -57,6 +68,7 @@ header h1{
 	padding-right: 15px;
 	padding-bottom: 5px;
 	width: auto;
+	margin-top: 10px;
 }
 
 .login-box h3{
@@ -80,41 +92,32 @@ header h1{
 }
 
 .blogs {
-	height: 500px; /* Will be auto soon */
-	width: 450px; 
+	width: 550px; 
 	margin: 0 auto;
-	border-top: none;
-	border-bottom: none;
-	border-left: 1px solid #333;
-	border-right: 1px solid #333;
 }
 
 .blogs h3{
 	text-align: center;
 }
 
-.signup-box{
-	width: 200px;
+.blogs .content{
+	height: auto;
+	border: 2px solid #333;
+	background: #eee;
 	padding: 10px;
-	font-family: Tahoma;
-	display: none;
 }
 
-.signup-box form input[type=text],[type=password]{
-	padding: 10px;
-	display: block;
-	margin: 5px;
-	width: 90%;
+.blogs .content table, td, th{
+	border: 1px solid black;
+ 	border-collapse: collapse;
+ 	margin-bottom: 5px;
 }
 
-.signup-box form input[type=submit]{
-	margin-top: 5px;
-	margin-left: 5px;
-	padding: 8px;
-	width: 100%;
-	text-align: center;
-	cursor: pointer;
+.blogs .content th, td{
+	padding: 5px;
 }
+
+
 
 @media (max-width: 800px) { 
  	/* Will be done soon */

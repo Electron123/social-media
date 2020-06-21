@@ -8,19 +8,27 @@
 <body>
 	<header>
 		<h1>Social Media</h1>
-		<div class="navbar">	
-			<a href="#">Home</a>
-			<a href="#">Join us!</a>
+		<div class="navbar">
+			{% if user.is_authenticated %}	
+			<form method="post" action="{% url 'logout' %}">
+				{% csrf_token %}
+				<a type="submit" >Logout</a>	
+			</form>
+			{% else %}
+			<a href="/">Home</a>
+			<a href="/signup" >Join us!</a>
+			{% endif %}
 		</div>
 	</header>
+	<br>
+	<br>
+	
 
 	{% if user.is_authenticated %}
-		<form method="post"  action="{% url 'logout' %}">
-			{% csrf_token %}
-			<input type="submit" value="logout">
-		</form>
 
-		<table>
+		
+
+		<table style="margin-top: 200px;">
 			<tr>
 				<th>Name:</th>
 				<th>Email: </th>
@@ -37,6 +45,7 @@
 		</form>
 	</div>
 
+		<marquee>Welcome to our Social Media {{user.username}}</marquee>
 	{% else %}
 	<div class="login-box">
 		<form method="post">
@@ -48,28 +57,37 @@
 		</form>
 	</div>
 
-	<div class="signup-box">
-		<form method="post">
-			<center><h3>Sign up here</h3></center>
-			<input type="text" placeholder="Username">
-			<input type="password" placeholder="Password">
-			<input type="text" placeholder="enter email">
-			<input type="submit" value='Sign up'>
-		</form>
-	</div>
-
+	
 	{% endif %}
 
 	<div class="blogs">
 		<h3>All memes here</h3>
 
-		{% for Content in Content %}
-		<img height="200" width="200" src="{{Content.img.url}}">
-		{{Content.caption}}
-		{{Content.posted}}
-		{{Content.author}}
+		<div class="content">
+			
+				{% for Content in Content %}
+				<img height="200" width="200" src="{{Content.img.url}}">
 
-		{% endfor %}
+				<table>
+					<tr>
+						<th>Author</th>
+						<th>Caption</th>
+						<th>Date</th>
+					</tr>
+
+					<tr>
+						<td><a href="#"> {{Content.author}}</a></td>
+						<td>{{Content.caption}}</td>
+						<td>{{Content.posted}}</td>
+					</tr>
+				</table>
+					
+				
+
+				{% endfor %}
+			
+			
+		</div>
 	</div>
 </body>
 </html>
