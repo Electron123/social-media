@@ -1,0 +1,121 @@
+body{
+	padding: 0;
+	margin: 0;
+}
+
+header {
+	height: 200px;
+	background: linear-gradient(-90deg, #0CCDA3, #C1FCD3);
+	margin-top: -22px;
+}
+header h1{
+	padding: 50px 0 0 20px;
+	text-shadow: 0 3px 0 #777;
+	font-family: Tahoma;
+
+}
+.navbar{
+	float:right;
+	margin-right: 100px;
+}
+.navbar a{
+	font-size: 20px;
+	font-family: Tahoma;
+	text-decoration: none;
+	margin: 5px;
+	border: 2px solid #333;
+	padding: 5px 15px;
+	color: white;
+	border-radius: 10px;
+	transition: padding .5s;
+}
+
+.navbar a:hover{
+	padding: 5px 20px;
+}
+
+.post {
+	text-align: center;
+}
+.post button {
+	border: 1px solid;
+	padding: 10px;
+	margin-top: 5px;
+	width: 150px;
+	border-radius: 10px 5px;
+	font-size: 20px;
+	background: linear-gradient(-90deg, #0CCDA3, #C1FCD3);
+	outline: none;
+	cursor: pointer;
+}
+
+.login-box{
+	float: right;
+	margin-right: 10px;
+	border: 1px solid transparent;
+	background-color: #ddd;
+	padding-right: 15px;
+	padding-bottom: 5px;
+	width: auto;
+}
+
+.login-box h3{
+	font-family: Tahoma;
+}
+
+.login-box form input[type=text],[type=password]{
+	display: block;
+	margin: 5px;
+	width: 90%;
+	padding: 10px;
+}
+
+.login-box form input[type=submit]{
+	margin-top: 5px;
+	margin-left: 5px;
+	padding: 8px;
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+}
+
+.blogs {
+	height: 500px; /* Will be auto soon */
+	width: 450px; 
+	margin: 0 auto;
+	border-top: none;
+	border-bottom: none;
+	border-left: 1px solid #333;
+	border-right: 1px solid #333;
+}
+
+.blogs h3{
+	text-align: center;
+}
+
+.signup-box{
+	width: 200px;
+	padding: 10px;
+	font-family: Tahoma;
+	display: none;
+}
+
+.signup-box form input[type=text],[type=password]{
+	padding: 10px;
+	display: block;
+	margin: 5px;
+	width: 90%;
+}
+
+.signup-box form input[type=submit]{
+	margin-top: 5px;
+	margin-left: 5px;
+	padding: 8px;
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+}
+
+@media (max-width: 800px) { 
+ 	/* Will be done soon */
+}

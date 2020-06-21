@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Social Media!</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+	<header>
+		<h1>Social Media</h1>
+		<div class="navbar">	
+			<a href="#">Home</a>
+			<a href="#">Join us!</a>
+		</div>
+	</header>
+
+	{% if user.is_authenticated %}
+		<form method="post"  action="{% url 'logout' %}">
+			{% csrf_token %}
+			<input type="submit" value="logout">
+		</form>
+
+		<table>
+			<tr>
+				<th>Name:</th>
+				<th>Email: </th>
+			</tr>
+
+			<tr>
+				<td>{{user.username}}</td>
+				<td>{{user.email}}</td>
+			</tr>
+		</table>
+
+	<div class="post">
+		<button href='post/'>Post</button>
+	</div>
+
+	{% else %}
+	<div class="login-box">
+		<form method="post">
+			<center><h3>Login here</h3></center>
+				{% csrf_token %}
+				{{form}}
+			<input type="submit" value='Login'>
+			
+		</form>
+	</div>
+
+	<div class="signup-box">
+		<form method="post">
+			<center><h3>Sign up here</h3></center>
+			<input type="text" placeholder="Username">
+			<input type="password" placeholder="Password">
+			<input type="text" placeholder="enter email">
+			<input type="submit" value='Sign up'>
+		</form>
+	</div>
+
+	{% endif %}
+
+	<div class="blogs">
+		<h3>All memes here</h3>
+
+		{% for Content in Content %}
+		<img height="200" width="200" src="{{Content.img.url}}">
+		{{Content.caption}}
+		{{Content.posted}}
+		{{Content.author}}
+
+		{% endfor %}
+	</div>
+</body>
+</html>
+

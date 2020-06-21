@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Post Meme</title>
+</head>
+<body>
+	<form method="post" enctype="multipart/form-data"> 
+		{% csrf_token %}
+		{{Post}}
+		<input type="submit" value="Post">
+	</form>
+
+	{{Post.errors}}
+</body>
+</html>
