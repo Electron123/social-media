@@ -11,4 +11,3 @@ I didn't focus much on front end site. I was just practing on django and made th
 4) Migrate all of your files 
 5) Run the server server
 
-
